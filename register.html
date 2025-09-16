@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberSquad Airways | Login & Register</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background: linear-gradient(to right, #0a0f2c, #031b34);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
+    }
+    .container {
+      width: 850px;
+      background: #0d1b3a;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+    }
+    .banner {
+      flex: 1;
+      background: #071630;
+      padding: 40px;
+      text-align: center;
+      color: #00f5d4;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .banner h1 {
+      margin-bottom: 15px;
+    }
+    .form-box {
+      flex: 1.2;
+      background: #112246;
+      padding: 40px;
+    }
+    /* Tabs */
+    .tabs {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #223a6b;
+    }
+    .tabs label {
+      flex: 1;
+      padding: 10px;
+      text-align: center;
+      cursor: pointer;
+      font-weight: bold;
+      color: #b0c7e1;
+      transition: 0.3s;
+    }
+    input[type="radio"] {
+      display: none;
+    }
+    /* Active tab */
+    #login-tab:checked ~ .tabs label[for="login-tab"],
+    #register-tab:checked ~ .tabs label[for="register-tab"] {
+      color: #00f5d4;
+      border-bottom: 2px solid #00f5d4;
+    }
+    /* Forms */
+    .form {
+      display: none;
+      flex-direction: column;
+      animation: fade 0.4s ease-in-out;
+    }
+    @keyframes fade {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    #login-tab:checked ~ .forms #login-form {
+      display: flex;
+    }
+    #register-tab:checked ~ .forms #register-form {
+      display: flex;
+    }
+    .form input {
+      margin: 10px 0;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      background: #1c2f5a;
+      color: #fff;
+    }
+    .form input::placeholder {
+      color: #b0c7e1;
+    }
+    .btn {
+      margin-top: 15px;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      background: linear-gradient(to right, #00f5d4, #00c4ff);
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Left banner -->
+    <div class="banner">
+      <h1>CyberSquad Airways</h1>
+      <p>Your journey begins here.<br>Experience world-class service with our flight management system.</p>
+      <div style="font-size: 35px;">✈️</div>
+    </div>
+
+    <!-- Right box -->
+    <div class="form-box">
+      <!-- Hidden radio buttons -->
+      <input type="radio" id="login-tab" name="tab" checked>
+      <input type="radio" id="register-tab" name="tab">
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <label for="login-tab">Login</label>
+        <label for="register-tab">Register</label>
+      </div>
+
+      <!-- Forms -->
+      <div class="forms">
+        <!-- Login -->
+        <form class="form" id="login-form">
+          <input type="text" placeholder="Username">
+          <input type="password" placeholder="Password">
+          <button type="submit" class="btn">Login</button>
+        </form>
+
+        <!-- Register -->
+        <form class="form" id="register-form">
+          <input type="text" placeholder="Username">
+          <input type="password" placeholder="Password">
+          <input type="email" placeholder="Email">
+          <input type="tel" placeholder="Phone">
+          <button type="submit" class="btn">Register</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
